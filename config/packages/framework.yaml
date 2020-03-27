@@ -1,0 +1,11 @@
+framework:
+    translator: { fallbacks: ["%locale%"] }
+    secret: '%env(APP_SECRET)%'
+    form: true
+    csrf_protection: true
+    templating: { engines: ["twig"] }
+    session:
+        handler_id: ~
+
+    cache:
+        default_redis_provider: 'redis://redis'

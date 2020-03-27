@@ -1,0 +1,45 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "PHP",
+	"dockerComposeFile": "../../docker-compose.yml",
+	"service": "php",
+	"workspaceFolder": "/app",
+
+	// Uncomment the line below if you want to keep your containers running after VS Code shuts down.
+	"shutdownAction": "none",
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	"runArgs": [
+		// Comment out the next line to run as root instead. Linux users, 
+		// update Dockerfile with your user's UID/GID if not 1000.
+		"-u", "vscode"
+	],
+
+	"extensions": [
+		"felixfbecker.php-debug",
+		"felixfbecker.php-intellisense",
+		"atlassian.atlascode",
+		"bmewburn.vscode-intelephense-client",
+		"neilbrayfield.php-docblocker",
+		"mehedidracula.php-namespace-resolver",
+		"eamodio.gitlens",
+		"humao.rest-client",
+		"streetsidesoftware.code-spell-checker",
+		"phproberto.vscode-php-getters-setters",
+		"hakcorp.php-awesome-snippets",
+		"wongjn.php-sniffer",
+		"emallin.phpunit",
+		"42crunch.vscode-openapi",
+		"mikestead.dotenv",
+		"mehedidracula.php-constructor",
+		"shd101wyy.markdown-preview-enhanced"
+	],
+
+	// Uncomment the next line if you want to add in default container specific settings.json values
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"php.suggest.basic": false
+	}
+}
