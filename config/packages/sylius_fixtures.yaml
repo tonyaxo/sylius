@@ -1,6 +1,6 @@
 imports:
-    - { resource: '../../tests/fixtures/shop_configuration.yaml' }
-    - { resource: '../../tests/fixtures/product_attributes.yaml' }
-    - { resource: '../../tests/fixtures/product_options.yaml' }
-    - { resource: '../../tests/fixtures/taxons.yaml' }
-    - { resource: '../../tests/fixtures/pizza_products.yaml' }
+    - { resource: '../../tests/fixtures/app_shop_configuration.yaml' }
+    - { resource: '../../tests/fixtures/app_product_attributes.yaml' }
+    - { resource: '../../tests/fixtures/app_product_options.yaml' }
+    - { resource: '../../tests/fixtures/app_taxons.yaml' }
+    - { resource: '../../tests/fixtures/app_pizza_products.yaml' }

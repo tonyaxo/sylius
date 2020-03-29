@@ -1,0 +1,17 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                cap_taxon:
+                    name: taxon
+                    options:
+                        custom:
+                            pizza:
+                                code: 'pizza'
+                                name: 'Пицца'
+                            roll:
+                                code: 'roll'
+                                name: 'Ролы'
