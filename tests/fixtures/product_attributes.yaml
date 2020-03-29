@@ -1,0 +1,95 @@
+
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                product_attributes:
+                    name: product_attribute
+                    options:
+                        custom:
+                            -   name: 'Ингредиенты'
+                                code: 'ingredients'
+                                type: 'select'
+                                configuration:
+                                    choices:
+                                        tomato-sauce:
+                                            '%locale%': 'томатный соус'
+                                        mozzarella:
+                                            '%locale%': 'моцарелла'
+
+                                        spicy-pepperoni:
+                                            '%locale%': 'пикантная пепперони'
+
+                                        hot-sauce:
+                                            '%locale%': 'острый соус'
+
+                                        chipotle-sauce:
+                                            '%locale%': 'соус чипотле'
+
+                                        teriyaki-sauce:
+                                            '%locale%': 'соус терияки'
+
+                                        salsa-sauce:
+                                            '%locale%': 'соус сальса'
+
+                                        cream-sauce:
+                                            '%locale%': 'сливочный соус'
+
+                                        ranch-sauce:
+                                            '%locale%': 'соус ранч'
+
+                                        cheese-sauce:
+                                            '%locale%': 'сырный соус'
+
+                                        gouda:
+                                            '%locale%': 'гауда'
+
+                                        cheddar:
+                                            '%locale%': 'чеддер'
+
+                                        parmesan:
+                                            '%locale%': 'пармезан'
+
+                                        blue-cheese:
+                                            '%locale%': 'блю чиз'
+
+                                        champignons:
+                                            '%locale%': 'шампиньоны'
+
+                                        ham:
+                                            '%locale%': 'ветчина'
+
+                                        chorizo-sausages:
+                                            '%locale%': 'колбаски чоризо'
+
+                                        cucumbers:
+                                            '%locale%': 'огурцы маринованные'
+
+                                        tomatoes:
+                                            '%locale%': 'томаты'
+
+                                        paprika:
+                                            '%locale%': 'паприка'
+
+                                        bacon:
+                                            '%locale%': 'бекон'
+
+                                        chicken:
+                                            '%locale%': 'цыпленок'
+
+                                        garlic-oil:
+                                            '%locale%': 'чесночное масло'
+
+                                        red-onion:
+                                            '%locale%': 'красный лук'
+
+                                        jalapenos:
+                                            '%locale%': 'халапеньо'
+
+                                        pineapple:
+                                            '%locale%': 'ананас'
+
+                                    multiple: true   # optional
+                                    # min: 1            # optional
+                                    # max: 1            # optional

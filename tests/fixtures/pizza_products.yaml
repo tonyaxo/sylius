@@ -1,0 +1,69 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                dress_product:
+                    name: product
+                    options:
+                        custom:
+                            -   name: 'Пепперони'
+                                code: 'pizza_pepperoni'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'tomato-sauce'
+                                        - 'spicy-pepperoni'
+                                        - 'mozzarella'
+
+                                product_options:
+                                    - 'pizza_size'
+                                    - 'pizza_dough'
+                                images:
+                                    - { path: '@SyliusCoreBundle/Resources/fixtures/dresses/dress_01.jpg', type: 'main' }
+
+                            -   name: 'Маргарита'
+                                code: 'pizza_margarita'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'tomato-sauce'
+                                        - 'tomatoes'
+                                        - 'mozzarella'
+
+                                product_options:
+                                    - 'pizza_size'
+                                    - 'pizza_dough'
+                                images:
+                                    - { path: '@SyliusCoreBundle/Resources/fixtures/dresses/dress_01.jpg', type: 'main' }
+
+                            -   name: 'Гавайская'
+                                code: 'pizza_hawaiian'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'tomato-sauce'
+                                        - 'pineapple'
+                                        - 'mozzarella'
+                                        - 'chicken'
+
+                                product_options:
+                                    - 'pizza_size'
+                                    - 'pizza_dough'
+                                images:
+                                    - { path: '@SyliusCoreBundle/Resources/fixtures/dresses/dress_01.jpg', type: 'main' }
+

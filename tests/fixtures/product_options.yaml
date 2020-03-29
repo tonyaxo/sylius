@@ -1,0 +1,23 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                pizza_option:
+                    name: product_option
+                    options:
+                        custom:
+                            -   name: 'Размер пиццы'
+                                code: 'pizza_size'
+                                values:
+                                    pizza_size_small: 'Маленькая'
+                                    pizza_size_medium: 'Средняя'
+                                    pizza_size_large: 'Большая'
+
+                            -   name: 'Тесто'
+                                code: 'pizza_dough'
+                                values:
+                                    pizza_dough_small: 'Классическое'
+                                    pizza_dough_medium: 'Тонкое'

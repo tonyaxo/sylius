@@ -1,0 +1,171 @@
+
+sylius_fixtures:
+    suites:
+        app:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                locale:
+                    options:
+                        locales:
+                            - 'ru'
+                currency:
+                    options:
+                        currencies:
+                            - 'RUB'
+
+                geographical:
+                    options:
+                        countries:
+                            - 'RU'
+                        zones:
+                            RU:
+                                name: 'Россия'
+                                countries:
+                                    - 'RU'
+
+                channel:
+                    options:
+                        custom:
+                            store:
+                                name: 'Store Channel'
+                                code: 'main_channel'
+                                locales:
+                                    # - '%locale%'
+                                    - 'ru'
+                                currencies:
+                                    - 'RUB'
+                                enabled: true
+                                hostname: '%env(resolve:SYLIUS_FIXTURES_HOSTNAME)%'
+                                shop_billing_data:
+                                    company: 'Название компании'
+                                    tax_id: ''
+                                    country_code: 'RU'
+                                    street: ''
+                                    city: ''
+                                    postcode: ''
+
+                payment_method:
+                    options:
+                        custom:
+                            cash_on_delivery:
+                                code: 'cash_on_delivery'
+                                name: 'Cash on delivery'
+                                channels:
+                                    - 'main_channel'
+                            bank_transfer:
+                                code: 'bank_transfer'
+                                name: 'Bank transfer'
+                                channels:
+                                    - 'main_channel'
+                                enabled: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            ups:
+                                code: 'shipping-delivery'
+                                name: 'Доставка'
+                                enabled: true
+                                channels:
+                                    - 'main_channel'
+
+                # customer_group:
+                #     options:
+                #         custom:
+                #             retail:
+                #                 code: 'retail'
+                #                 name: 'Retail'
+                #             wholesale:
+                #                 code: 'wholesale'
+                #                 name: 'Wholesale'
+
+                shop_user:
+                    name: 'shop_user'
+                    options:
+                        random: 20
+                        custom:
+                            -   email: 'user@example.com'
+                                first_name: 'Имя клиента'
+                                last_name: 'Фамилия клиента'
+                                password: 'password'
+
+                admin_user:
+                    name: 'admin_user'
+                    options:
+                        custom:
+                            -   email: 'admin@example.com'
+                                username: 'admin'
+                                password: 'password'
+                                enabled: true
+                                locale_code: 'ru'
+                                first_name: 'Администратор'
+                                last_name: 'Админ'
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/john.jpg'
+
+                            -   email: 'api@example.com'
+                                username: 'api'
+                                password: 'api-password'
+                                enabled: true
+                                locale_code: 'ru'
+                                first_name: 'Api администратор'
+                                last_name: 'Api'
+                                api: true
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/luke.jpg'
+
+                # tax_category:
+                #     options:
+                #         custom:
+                #             clothing:
+                #                 code: "clothing"
+                #                 name: "Clothing"
+                #             other:
+                #                 code: 'other'
+                #                 name: 'Other'
+
+                # tax_rate:
+                #     options:
+                #         custom:
+                #             clothing_tax:
+                #                 code: 'clothing_sales_tax_7'
+                #                 name: 'Clothing Sales Tax 7%'
+                #                 zone: 'US'
+                #                 category: 'clothing'
+                #                 amount: 0.07
+
+                #             default_sales_tax:
+                #                 code: 'sales_tax_20'
+                #                 name: 'Sales Tax 20%'
+                #                 zone: 'US'
+                #                 category: 'other'
+                #                 amount: 0.2
+
+                promotion:
+                    options:
+                        custom:
+                            christmas:
+                                code: 'christmas'
+                                name: 'Рождество'
+                                channels:
+                                    - 'main_channel'
+                            new_year:
+                                code: 'new_year'
+                                name: 'Новый год'
+                                usage_limit: 10
+                                priority: 2
+                                starts_at: '-7 day'
+                                ends_at: '7 day'
+                                channels:
+                                    - 'main_channel'
+                                rules:
+                                    -   type: 'item_total'
+                                        configuration:
+                                            FASHION_WEB:
+                                                amount: 100.00
+                                actions:
+                                    -   type: 'order_fixed_discount'
+                                        configuration:
+                                            FASHION_WEB:
+                                                amount: 10.00
