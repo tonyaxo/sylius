@@ -1,0 +1,3 @@
+imports:
+    - { resource: core/messages.ru.yml }
+    - { resource: product/messages.ru.yml }
