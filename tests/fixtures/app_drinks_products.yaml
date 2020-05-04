@@ -1,0 +1,60 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                drinks_product:
+                    name: product
+                    options:
+                        custom:
+                            -   name: 'Coca-cola Zero, 0,5 л'
+                                code: 'drinks_coca-cola-zero05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+                                    
+                            -   name: 'Coca-cola, 0,5 л'
+                                code: 'drinks_coca-cola-05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+
+                            -   name: 'Sprite, 0,5 л'
+                                code: 'drinks_sprite-05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+
+                            -   name: 'Fanta, 0,5 л'
+                                code: 'drinks_fanta-05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+
+                            -   name: 'Кофе Американо, 0,3 л'
+                                code: 'drinks_cafe-americano-05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+
+                            -   name: 'Кофе Латте, 0,4 л'
+                                code: 'drinks_cafe-latte-05'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'drinks'
+                                taxons:
+                                    - 'drinks'
+
+

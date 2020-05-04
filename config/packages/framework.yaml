@@ -7,5 +7,5 @@ framework:
     session:
         handler_id: ~
 
-    cache:
-        default_redis_provider: 'redis://redis'
+    # cache:
+    #     default_redis_provider: 'redis://redis'

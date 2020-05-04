@@ -5,7 +5,7 @@ sylius_fixtures:
     suites:
         app:
             fixtures:
-                dress_product:
+                pizza_product:
                     name: product
                     options:
                         custom:
@@ -25,8 +25,8 @@ sylius_fixtures:
                                 product_options:
                                     - 'pizza_size'
                                     - 'pizza_dough'
-                                images:
-                                    - { path: '@SyliusCoreBundle/Resources/fixtures/dresses/dress_01.jpg', type: 'main' }
+                                # images:
+                                #     - { path: './Resources/images/pizza_pepperoni.jpg', type: 'main' }
 
                             -   name: 'Маргарита'
                                 code: 'pizza_margarita'
@@ -67,3 +67,83 @@ sylius_fixtures:
                                 images:
                                     - { path: '@SyliusCoreBundle/Resources/fixtures/dresses/dress_01.jpg', type: 'main' }
 
+                            -   name: 'Мясная'
+                                code: 'pizza_meats'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'tomato-sauce'
+                                        - 'mozzarella'
+                                        - 'hum'
+                                        - 'bacon'
+                                # images:
+                                #     - { path: './Resources/images/pizza_pepperoni.jpg', type: 'main' }
+                            
+                            -   name: 'Сырная'
+                                code: 'pizza_cheese'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'cream-sauce'
+                                        - 'mozzarella'
+                                        - 'gouda'
+                                # images:
+                                #     - { path: './Resources/images/pizza_cheese.jpg', type: 'main' }
+                            
+                            -   name: 'Цыпленок BBQ'
+                                code: 'pizza_chicken-bbq'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'cream-sauce'
+                                        - 'mozzarella'
+                                        - 'chicken'
+                                        - 'bacon'
+                                        - 'red-onion'
+                                # images:
+                                #     - { path: './Resources/images/pizza_chicken-bbq.jpg', type: 'main' }
+                            
+                            -   name: 'Мексиканская'
+                                code: 'pizza_mexicano'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                                product_attributes:
+                                    ingredients:
+                                        - 'hot-sauce'
+                                        - 'spicy-pepperoni'
+                                        - 'chorizo-sausages'
+                                        - 'bacon'
+                                        - 'red-onion'
+                                # images:
+                                #     - { path: './Resources/images/pizza_chicken-bbq.jpg', type: 'main' }
+                            
+                            -   name: 'Итальянская'
+                                code: 'pizza_italiano'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'
+                            
+                            -   name: 'Четыре сезона'
+                                code: 'pizza_four-seasons'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'pizza'
+                                taxons:
+                                    - 'pizza'

@@ -4,3 +4,5 @@ imports:
     - { resource: '../../tests/fixtures/app_product_options.yaml' }
     - { resource: '../../tests/fixtures/app_taxons.yaml' }
     - { resource: '../../tests/fixtures/app_pizza_products.yaml' }
+    - { resource: '../../tests/fixtures/app_roll_products.yaml' }
+    - { resource: '../../tests/fixtures/app_drinks_products.yaml' }

@@ -1,0 +1,34 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                roll_product:
+                    name: product
+                    options:
+                        custom:
+                            -   name: 'Филадельфия с лососем'
+                                code: 'roll_philadelphia-salmon'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'roll'
+                                taxons:
+                                    - 'roll'
+
+                            -   name: 'Авокадо с тунцом'
+                                code: 'roll_avocado-with-tuna'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'roll'
+                                taxons:
+                                    - 'roll'
+
+                            -   name: 'Ролл с тунцом'
+                                code: 'roll_tuna'
+                                channels:
+                                    - 'main_channel'
+                                main_taxon: 'roll'
+                                taxons:
+                                    - 'roll'

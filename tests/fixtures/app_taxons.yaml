@@ -15,3 +15,12 @@ sylius_fixtures:
                             roll:
                                 code: 'roll'
                                 name: 'Ролы'
+                            combo:
+                                code: 'combo'
+                                name: 'Комбо'
+                            drinks:
+                                code: 'drinks'
+                                name: 'Напитки'
+                            others:
+                                code: 'others'
+                                name: 'Другие товары'
