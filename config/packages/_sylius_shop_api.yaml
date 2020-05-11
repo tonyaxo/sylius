@@ -1,3 +1,9 @@
 imports: 
     - { resource: "@SyliusShopApiPlugin/Resources/config/app/config.yml" }
     - { resource: "@SyliusShopApiPlugin/Resources/config/app/sylius_mailer.yml" }
+
+sylius_shop_api:
+    # TODO re-determinate `sylius.shop_api_plugin.factory.product_view_factory`
+    # TODO and `sylius.shop_api_plugin.factory.limited_product_attribute_values_view_factory`
+    included_attributes:
+        - "ingredients"
