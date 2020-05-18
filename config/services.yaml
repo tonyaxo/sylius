@@ -33,3 +33,13 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    sylius.shop_api_plugin.factory.product_view_factory:
+        class: App\Factory\Product\ProductViewFactory
+        arguments:
+            - '@sylius.shop_api_plugin.factory.image_view_factory'
+            - '@sylius.shop_api_plugin.factory.limited_product_attribute_values_view_factory'
+            - '%sylius.shop_api.view.product.class%'
+            - '%sylius.shop_api.view.product_taxon.class%'
+            - '%locale%'
+    App\Factory\Product\ProductViewFactory: '@sylius.shop_api_plugin.factory.product_view_factory'

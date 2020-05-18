@@ -7,3 +7,6 @@ sylius_shop_api:
     # TODO and `sylius.shop_api_plugin.factory.limited_product_attribute_values_view_factory`
     included_attributes:
         - "ingredients"
+
+    view_classes:
+        product: App\View\Product\ProductView
