@@ -11,6 +11,8 @@ security:
             id: sylius.admin_user_provider.email_or_name_based
         sylius_shop_user_provider:
             id: sylius.shop_user_provider.email_or_name_based
+        app_shop_api_user_provider:
+            id: sylius.shop_user_provider.phone_number_based
     encoders:
         Sylius\Component\User\Model\UserInterface: bcrypt
         argon2i: bcrypt
@@ -20,10 +22,10 @@ security:
             pattern: "%sylius_shop_api.security.regex%"
             stateless: true
             anonymous: true
-            provider: sylius_shop_user_provider
+            provider: app_shop_api_user_provider
             json_login:
                 check_path: /shop-api/login
-                username_path: email
+                username_path: phoneNumber
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure

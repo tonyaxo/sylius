@@ -16,9 +16,8 @@
     ],
     "require": {
         "php": "^7.3",
-        "bitbag/cms-plugin": "^2.3",
         "sylius/shop-api-plugin": "^1.0",
-        "sylius/sylius": "~1.7.0@rc",
+        "sylius/sylius": "~1.7.0",
         "symfony/dotenv": "^4.4",
         "symfony/flex": "^1.2"
     },
@@ -46,6 +45,7 @@
         "symfony/browser-kit": "^4.4",
         "symfony/debug-bundle": "^4.4",
         "symfony/intl": "^4.4",
+        "symfony/maker-bundle": "^1.19",
         "symfony/web-profiler-bundle": "^4.4"
     },
     "prefer-stable": true,

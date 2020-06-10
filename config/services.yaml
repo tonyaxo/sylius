@@ -43,3 +43,55 @@ services:
             - '%sylius.shop_api.view.product_taxon.class%'
             - '%locale%'
     App\Factory\Product\ProductViewFactory: '@sylius.shop_api_plugin.factory.product_view_factory'
+
+    # message handler.
+    sylius.shop_api_plugin.handler.register_customer:
+        class: App\Handler\Customer\RegisterCustomerByPhoneHandler
+        arguments:
+            - '@sylius.repository.shop_user'
+            - '@sylius.repository.channel'
+            - '@sylius.factory.shop_user'
+            - '@event_dispatcher'
+            - '@sylius.shop_api_plugin.provider.customer_provider'
+        tags:
+            - { name: messenger.message_handler, bus: sylius_shop_api_plugin.command_bus }
+    App\Handler\Customer\RegisterCustomerByPhoneHandler: '@sylius.shop_api_plugin.handler.register_customer'
+
+    sylius.shop_api_plugin.provider.customer_provider:
+        class: App\Provider\ShopUserAwareCustomerProvider
+        arguments:
+            - '@sylius.repository.customer'
+            - '@sylius.factory.customer'
+            - '@sylius.shop_api_plugin.provider.current_user_provider'
+    App\Provider\ShopUserAwareCustomerProvider: '@sylius.shop_api_plugin.provider.customer_provider'
+
+    # security provider.
+    sylius.shop_user_provider.phone_number_based:
+        class: App\Provider\PhoneNumberProvider
+        lazy: true
+        arguments:
+            - '%shop_user_class%'
+            - '@sylius.repository.shop_user'
+            - '@sylius.canonicalizer'
+    App\Provider\PhoneNumberProvider: '@sylius.shop_user_provider.phone_number_based'
+
+
+    App\EventListener\CustomerVerificationListener:
+        tags:
+            - { name: kernel.event_listener, event: app.customer.phone_verification, method: onCustomerPhoneVerification }
+
+    # from vendor/sylius/shop-api-plugin/src/Resources/config/services.xml
+    sylius.listener.cart_blamer:
+        class: App\EventListener\CartBlamerListener
+        arguments:
+            - '@sylius.repository.order'
+            - '@sylius_shop_api_plugin.command_bus'
+            - '@request_stack'
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJwtLogin }
+
+    # from vendor/sylius/sylius/src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners.xml
+    sylius.listener.default_username:
+        class: App\EventListener\DefaultUsernameORMListener
+        tags:
+            - { name: doctrine.event_listener, event: onFlush, lazy: true }

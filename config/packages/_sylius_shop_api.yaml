@@ -10,3 +10,7 @@ sylius_shop_api:
 
     view_classes:
         product: App\View\Product\ProductView
+
+
+    request_classes:
+        register_customer: App\Request\Customer\RegisterCustomerByPhoneRequest
