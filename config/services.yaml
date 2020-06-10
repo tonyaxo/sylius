@@ -34,6 +34,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    app.one_time_password:
+        class: App\Service\OneTimePasswordService
+    App\Service\OneTimePasswordServiceInterface: '@app.one_time_password'
+
     sylius.shop_api_plugin.factory.product_view_factory:
         class: App\Factory\Product\ProductViewFactory
         arguments:

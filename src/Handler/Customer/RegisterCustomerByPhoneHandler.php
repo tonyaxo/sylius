@@ -4,6 +4,7 @@ namespace App\Handler\Customer;
 
 use App\Command\Customer\RegisterCustomerByPhone;
 use App\Event\CustomerPhoneVerification;
+use App\Service\OneTimePasswordServiceInterface;
 use Sylius\Component\Channel\Repository\ChannelRepositoryInterface;
 use Sylius\Component\Core\Model\ShopUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
@@ -29,18 +30,22 @@ final class RegisterCustomerByPhoneHandler
     /** @var CustomerProviderInterface */
     private $customerProvider;
 
+    private $oneTimePassword;
+
     public function __construct(
         UserRepositoryInterface $userRepository,
         ChannelRepositoryInterface $channelRepository,
         FactoryInterface $userFactory,
         EventDispatcherInterface $eventDispatcher,
-        CustomerProviderInterface $customerProvider
+        CustomerProviderInterface $customerProvider,
+        OneTimePasswordServiceInterface $oneTimePassword
     ) {
         $this->userRepository = $userRepository;
         $this->channelRepository = $channelRepository;
         $this->userFactory = $userFactory;
         $this->eventDispatcher = $eventDispatcher;
         $this->customerProvider = $customerProvider;
+        $this->oneTimePassword = $oneTimePassword;
     }
 
     public function __invoke(RegisterCustomerByPhone $command): void
@@ -68,8 +73,7 @@ final class RegisterCustomerByPhoneHandler
         $user->setEnabled(true);
 
         // PRE_PASSWORD_RESET
-        $password = rand(1000, 9999);
-        $user->setPlainPassword("$password");    // send by SMS
+        $user->setPlainPassword($this->oneTimePassword->generate());    // send by SMS
         $this->userRepository->add($user);
         // POST_PASSWORD_RESET
 
